@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Art by Hand</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>   
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Crafting something beautiful...</p>
+    </div>
+
+    <header class="elegant-header">
+        <div class="header-top">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Logo" class="header-logo" /></a>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artist.html">The Artist</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section for Contact -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Let's Connect!</h2>
+            <p>I would love to hear your thoughts, ideas, or any custom work you'd like to collaborate on.</p>
+
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <div class="form-field">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+            </div>
+            <div class="form-field">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email" />
+            </div>
+            <div class="form-field">
+                <label for="email">Your Mobile:</label>
+                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number" />
+            </div>
+            <div class="form-field">
+                <label for="message">Your Message:</label>
+                <textarea id="fmmessage" name="fmmessage" rows="4" required placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message on <i class="fab fa-whatsapp fa-1x"></i></button>
+        </form>
+    </section>
+    <section class="intro visual-intro">
+        <h3>Or Reach Me Through:</h3>
+        <div class="intro-features">
+            <div class="feature-card">
+                <i class="fas fa-phone"></i>
+
+                <h4>
+                    +91 123 456 7890
+
+                </h4>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-envelope"></i>
+
+                <h4><a href="mailto:your@email.com">your@email.com</a></h4>
+            </div>
+            <div class="feature-card">
+                <i class="fab fa-instagram"></i>
+
+                <h4><a href="https://instagram.com/YOUR_HANDLE" target="_blank">@your_handle</a></h4>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with 💖 by <strong>Rangsaj Arts</strong> | © 2025 RangsajArts</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/YOUR_HANDLE" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/91YOURNUMBER" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Back to Top">🖌️</button>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+
+        hamburger.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+    <script>
+        const container = document.querySelector('.category-scroll');
+        const cardWidth = 200; // approx width including margin
+        const maxScrollLeft = () => container.scrollWidth - container.clientWidth;
+
+        function scrollCategories(direction) {
+            const currentScroll = container.scrollLeft;
+            const scrollAmount = cardWidth * 2;
+
+            if (direction === 'right') {
+                if (currentScroll + scrollAmount >= maxScrollLeft() - 10) {
+                    // If at the end, scroll back to start
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            } else {
+                if (currentScroll <= 0) {
+                    // If at the start, scroll to the end
+                    container.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+    <script>
+        function scrollInstagram(direction) {
+            const container = document.getElementById('instaScroll');
+            const scrollAmount = 350;
+
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+    <script>
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = "flex";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    <script>
+        // Get the WhatsApp button
+        var whatsappButton = document.querySelector('.whats-app');
+
+        // Show/Hide button based on scroll
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) { // Show button after scrolling 100px
+                whatsappButton.classList.add('show');
+            } else { // Hide button when near the top
+                whatsappButton.classList.remove('show');
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Perform form validation
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var mobile = document.getElementById('mobile').value.trim();
+            var message = document.getElementById('fmmessage').value.trim();
+
+            if (!name || !email || !mobile || !message) {
+                alert('All fields are required.');
+                return;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            var mobilePattern = /^\d{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            // Construct the WhatsApp URL
+            var url = `https://api.whatsapp.com/send?phone=9819413273&text=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMobile: ${encodeURIComponent(mobile)}%0AMessage: ${encodeURIComponent(message)}`;
+
+            // Open the WhatsApp URL in a new tab
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>

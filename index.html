@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangsaj Arts | Home</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <!--<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Crafting something beautiful...</p>
+    </div>
+    <header class="elegant-header">
+        <div class="header-top">
+            <img src="assets/images/logo.png" alt="Rangsaj Arts Logo" class="header-logo" />
+
+            <div class="header-right">
+                <div class="header-icons">
+                    <a href="https://instagram.com/_rangsaj_arts_" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/91YOURNUMBER" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="artist.html">The Artist</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Crafted with Love & Creativity</h2>
+            <p>Unique handmade wedding cards, gifts & celebration art pieces made just for you.</p>
+            <a href="products.html" class="btn">Explore Collection</a>
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+    <section class="quote">
+        <blockquote>
+            "Every piece I create carries a piece of my heart, my culture, and your story."
+            <span>– The Artist</span>
+        </blockquote>
+    </section>
+    <section class="intro visual-intro">
+        <h3>✨ Why Choose Handmade?</h3>
+        <div class="intro-features">
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h4>Made with Love</h4>
+                <p>Every piece carries emotion and intention.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-palette"></i>
+                <h4>One of a Kind</h4>
+                <p>Uniquely crafted — never mass-produced.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-gift"></i>
+                <h4>Perfect for Gifting</h4>
+                <p>Custom, thoughtful and truly memorable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h3>🎨 Explore Categories</h3>
+        <div class="category-scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollCategories('left')">&#8249;</button>
+            <div class="category-scroll">
+                <div class="cat-card">
+                    <img src="assets/images/Categories/WCC.jpg" alt="Wedding Cards" />
+                    <p>Wedding Cards</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/WRC.jpg" alt="Rukhwat Decor" />
+                    <p>Rukhwat Decor</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/WGC.jpg" alt="Wedding Gifts" />
+                    <p>Wedding Gifts</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/NBC.jpg" alt="Naming Boards" />
+                    <p>Naming Boards</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/BGC.jpg" alt="Birthday Gifts" />
+                    <p>Birthday Gifts</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/NCC.jpg" alt="Anniversary Gifts" />
+                    <p>Naming Ceremony</p>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/images/Categories/BSC.jpg" alt="Baby Showers" />
+                    <p>Baby Showers</p>
+                </div>
+
+            </div>
+            <button class="scroll-btn right" onclick="scrollCategories('right')">&#8250;</button>
+        </div>
+    </section>
+
+    <section class="instagram">
+        <h3>📸 From Instagram</h3>
+        <p>Follow <a href="https://www.instagram.com/_rangsaj_arts_/" target="_blank">@_rangsaj_arts_</a> for latest creations!</p>
+
+        <div class="insta-scroll-wrapper">
+            <button class="scroll-btn left" onclick="scrollInstagram('left')">&#8249;</button>
+
+            <div class="insta-scroll" id="instaScroll">
+                <blockquote class="instagram-media"
+                            data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/reel/DE4GMXbtmSx/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:3px;
+  box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
+             0 1px 10px 0 rgba(0,0,0,0.15);
+  margin: 5px;
+  max-width:100%;
+  min-width:300px;
+  padding:0;
+  min-height: 640px;
+  max-height: 640px;
+  overflow: hidden;">
+                </blockquote>
+                <blockquote class="instagram-media"
+                            data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/reel/DF-GU-Syy_v/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:3px;
+         box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
+                     0 1px 10px 0 rgba(0,0,0,0.15);
+         margin: 0 auto;
+         max-width: 100%;
+         min-width: 320px;
+         padding: 0;
+         min-height: 640px;
+         max-height: 640px;
+         overflow: hidden;">
+                </blockquote>
+
+                <blockquote class="instagram-media"
+                            data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/reel/DHc99pht5G5/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:3px;
+         box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
+                     0 1px 10px 0 rgba(0,0,0,0.15);
+         margin: 0 auto;
+         max-width: 100%;
+         min-width: 320px;
+         padding: 0;
+         min-height: 640px;
+         max-height: 640px;
+         overflow: hidden;">
+                </blockquote>
+
+                <blockquote class="instagram-media"
+                            data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/reel/DEb1HWjtIOU/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:3px;
+  box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
+             0 1px 10px 0 rgba(0,0,0,0.15);
+  margin: 5px;
+  max-width:100%;
+  min-width:300px;
+  padding:0;
+  min-height: 640px;
+  max-height: 640px;
+  overflow: hidden;">
+                </blockquote>
+                <blockquote class="instagram-media"
+                            data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/reel/DDwdHocNeK4/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:3px;
+ box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
+            0 1px 10px 0 rgba(0,0,0,0.15);
+ margin: 5px;
+ max-width:100%;
+ min-width:300px;
+ padding:0;
+ min-height: 640px;
+ max-height: 640px;
+ overflow: hidden;">
+                </blockquote>
+                <!-- Add more embedded posts here -->
+            </div>
+
+            <button class="scroll-btn right" onclick="scrollInstagram('right')">&#8250;</button>
+        </div>
+    </section>
+
+    <script async src="//www.instagram.com/embed.js"></script>
+
+    <section class="cta">
+        <h3>Have a Custom Idea in Mind?</h3>
+        <p>Let’s create something beautiful together. Whether it’s for a wedding, a baby shower, or just because — I’d love to make it for you 💖</p>
+        <a href="contact.html" class="btn">Contact Me</a>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with 💖 by <strong>Rangsaj Arts</strong> | © 2025 RangsajArts</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/YOUR_HANDLE" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/91YOURNUMBER" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Back to Top">🖌️</button>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+
+        hamburger.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+    <script>
+        const container = document.querySelector('.category-scroll');
+        const cardWidth = 200; // approx width including margin
+        const maxScrollLeft = () => container.scrollWidth - container.clientWidth;
+
+        function scrollCategories(direction) {
+            const currentScroll = container.scrollLeft;
+            const scrollAmount = cardWidth * 2;
+
+            if (direction === 'right') {
+                if (currentScroll + scrollAmount >= maxScrollLeft() - 10) {
+                    // If at the end, scroll back to start
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            } else {
+                if (currentScroll <= 0) {
+                    // If at the start, scroll to the end
+                    container.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+    <script>
+        function scrollInstagram(direction) {
+            const container = document.getElementById('instaScroll');
+            const scrollAmount = 350;
+
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 500);
+        });
+    </script>
+    <script>
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = "flex";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+</body>
+</html>
