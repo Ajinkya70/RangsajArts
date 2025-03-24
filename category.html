@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Art by Hand</title>
+    <title>Rangsaj Arts | Categories</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
     <div id="loader">
         <div class="spinner"></div>
         <p>Crafting something beautiful...</p>
     </div>
-
     <header class="elegant-header">
         <div class="header-top">
             <img src="assets/images/logo.png" alt="Rangsaj Arts Logo" class="header-logo" />
@@ -49,61 +41,55 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Section for Contact -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Let's Connect!</h2>
-            <p>I would love to hear your thoughts, ideas, or any custom work you'd like to collaborate on.</p>
 
-        </div>
-        <div class="hero-wave"></div>
+    <section class="category-hero">
+        <h1>🎨 Explore Our Handmade Collections</h1>
+        <p>Each category is a celebration of culture, love, and creativity.</p>
     </section>
-    <!-- Contact Form Section -->
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
-        <form id="contactForm">
-            <div class="form-field">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
-            </div>
-            <div class="form-field">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email" />
-            </div>
-            <div class="form-field">
-                <label for="email">Your Mobile:</label>
-                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number" />
-            </div>
-            <div class="form-field">
-                <label for="message">Your Message:</label>
-                <textarea id="fmmessage" name="fmmessage" rows="4" required placeholder="Type your message here..."></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message on <i class="fab fa-whatsapp fa-1x"></i></button>
-        </form>
-    </section>
-    <section class="intro visual-intro">
-        <h3>Or Reach Me Through:</h3>
-        <div class="intro-features">
-            <div class="feature-card">
-                <i class="fas fa-phone"></i>
 
-                <h4>
-                    +91 123 456 7890
+    <section class="category-list">
 
-                </h4>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-envelope"></i>
-
-                <h4><a href="mailto:your@email.com">your@email.com</a></h4>
-            </div>
-            <div class="feature-card">
-                <i class="fab fa-instagram"></i>
-
-                <h4><a href="https://instagram.com/YOUR_HANDLE" target="_blank">@your_handle</a></h4>
+        <!-- Category Item -->
+        <div class="category-block" style="background-image: url('assets/images/Categories/WCC.jpg');" data-animate>
+            <div class="category-info">
+                <h2>Wedding Cards</h2>
+                <p>Invite your loved ones with custom, hand-crafted wedding cards made with emotion and elegance.</p>
+                <a href="wedding-cards.html" class="btn">View Designs</a>
             </div>
         </div>
+
+        <!-- Rukhwat Decor -->
+        <div class="category-block" style="background-image: url('assets/images/Categories/WRC.jpg');" data-animate>
+            <div class="category-info">
+                <h2>Rukhwat Decor</h2>
+                <p>Beautiful setups with traditional charm and personal touches to celebrate Maharashtrian culture.</p>
+                <a href="#" class="btn">View Pieces</a>
+            </div>
+        </div>
+
+        <!-- Wedding Gifts -->
+        <div class="category-block" style="background-image: url('assets/images/Categories/WGC.jpg');" data-animate>
+            <div class="category-info">
+                <h2>Wedding Gifts</h2>
+                <p>One-of-a-kind wedding gifts that speak from the heart, designed to be treasured forever.</p>
+                <a href="#" class="btn">Explore Gifts</a>
+            </div>
+        </div>
+
+        <!-- Naming Boards -->
+        <div class="category-block custom-pos" style="background-image: url('assets/images/Categories/NBC.jpg');" data-animate>
+
+            <div class="category-info">
+                <h2>Naming Boards</h2>
+                <p>Custom welcome boards for new beginnings — perfect for naming ceremonies or baby showers.</p>
+                <a href="#" class="btn">See More</a>
+            </div>
+        </div>
+
+        <!-- Add more as needed -->
+
     </section>
+
     <footer class="footer">
         <div class="footer-content">
             <p>Made with 💖 by <strong>Rangsaj Arts</strong> | © 2025 RangsajArts</p>
@@ -200,66 +186,6 @@
                 top: 0,
                 behavior: "smooth"
             });
-        });
-    </script>
-    <script>
-        // Get the WhatsApp button
-        var whatsappButton = document.querySelector('.whats-app');
-
-        // Show/Hide button based on scroll
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 100) { // Show button after scrolling 100px
-                whatsappButton.classList.add('show');
-            } else { // Hide button when near the top
-                whatsappButton.classList.remove('show');
-            }
-        });
-    </script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Perform form validation
-            var name = document.getElementById('name').value.trim();
-            var email = document.getElementById('email').value.trim();
-            var mobile = document.getElementById('mobile').value.trim();
-            var message = document.getElementById('fmmessage').value.trim();
-
-            if (!name || !email || !mobile || !message) {
-                alert('All fields are required.');
-                return;
-            }
-
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            var mobilePattern = /^\d{10}$/;
-            if (!mobilePattern.test(mobile)) {
-                alert('Please enter a valid 10-digit mobile number.');
-                return;
-            }
-
-            // Construct the WhatsApp URL
-            var url = `https://api.whatsapp.com/send?phone=9819413273&text=${encodeURIComponent(
-                `👋 Hello Rangsaj Arts,
-
-I'm reaching out through your Contact page and would love to connect!
-
-👤 Name: ${name}
-📧 Email: ${email}
-📱 Mobile: ${mobile}
-
-💬 Message:
-${message}
-
-Excited to hear from you soon! 💖`
-            )}`;
-
-            // Open the WhatsApp URL in a new tab
-            window.open(url, '_blank');
         });
     </script>
 </body>

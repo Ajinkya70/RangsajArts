@@ -3,25 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Art by Hand</title>
+    <title>Rangsaj Arts | In Detail</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
     <div id="loader">
         <div class="spinner"></div>
         <p>Crafting something beautiful...</p>
     </div>
-
     <header class="elegant-header">
         <div class="header-top">
             <img src="assets/images/logo.png" alt="Rangsaj Arts Logo" class="header-logo" />
@@ -49,60 +41,78 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Section for Contact -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Let's Connect!</h2>
-            <p>I would love to hear your thoughts, ideas, or any custom work you'd like to collaborate on.</p>
-
-        </div>
-        <div class="hero-wave"></div>
+    <section class="product-hero">
+        <h1>Floral Charm Wedding Card</h1>
     </section>
-    <!-- Contact Form Section -->
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
+
+    <!-- Image Slider -->
+    <section class="product-slider" data-animate>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img src="assets/Services/Wedding-invitation-mockup02.jpg" alt="Floral Card 1">
+                <img src="assets/Services/Wedding-invitation-mockup02.jpg" alt="Floral Card 2">
+                <img src="assets/Services/Wedding-invitation-mockup02.jpg" alt="Floral Card 3">
+                <img src="assets/Services/Wedding-invitation-mockup02.jpg" alt="Floral Card 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reel Embed -->
+    <section class="product-reel" data-animate>
+        <div class="reel-wrapper">
+            <div class="reel-embed">
+                <blockquote class="instagram-media"
+                            data-instgrm-permalink="https://www.instagram.com/reel/DF-GU-Syy_v/"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:12px;
+                margin: 0 auto; max-width:320px; min-height: 640px; overflow:hidden;">
+                </blockquote>
+            </div>
+            <div class="reel-text">
+                <h3>Watch it in Action ✨</h3>
+                <p>This reel features the full floral card process, packaging, and a glimpse of how it feels in real life. It’s a bride-favorite for a reason 💌</p>
+            </div>
+        </div>
+        <script async src="//www.instagram.com/embed.js"></script>
+    </section>
+
+
+    <!-- Details -->
+    <section class="product-details" data-animate>
+        <h2>Details & Customization</h2>
+        <ul>
+            <li>Premium textured paper with pastel floral motifs</li>
+            <li>Includes matching envelope with seal</li>
+            <li>Size: 6 x 9 inches | Handmade ink calligraphy optional</li>
+            <li>Minimum Order: 50 cards</li>
+        </ul>
+        <p class="note">Looking for name personalization or theme changes? I’ve got you 💖</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="product-contact" data-animate>
+        <h3>Interested in this design?</h3>
+        <p>Drop your details and I’ll get back to you soon!</p>
+
         <form id="contactForm">
             <div class="form-field">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
             </div>
             <div class="form-field">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email" />
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
             </div>
             <div class="form-field">
-                <label for="email">Your Mobile:</label>
-                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number" />
+                <label for="tel">Mobile:</label>
+                <input type="tel" id="mobile" required>
             </div>
             <div class="form-field">
-                <label for="message">Your Message:</label>
-                <textarea id="fmmessage" name="fmmessage" rows="4" required placeholder="Type your message here..."></textarea>
+                <label for="fmmessage">Message:</label>
+                <textarea id="fmmessage" required>I'm interested in above design. Please share more details.</textarea>
             </div>
-            <button type="submit" class="btn">Send Message on <i class="fab fa-whatsapp fa-1x"></i></button>
+            <button type="submit" class="btn">Send Inquiry on <i class="fab fa-whatsapp fa-1x"></i></button>
         </form>
-    </section>
-    <section class="intro visual-intro">
-        <h3>Or Reach Me Through:</h3>
-        <div class="intro-features">
-            <div class="feature-card">
-                <i class="fas fa-phone"></i>
-
-                <h4>
-                    +91 123 456 7890
-
-                </h4>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-envelope"></i>
-
-                <h4><a href="mailto:your@email.com">your@email.com</a></h4>
-            </div>
-            <div class="feature-card">
-                <i class="fab fa-instagram"></i>
-
-                <h4><a href="https://instagram.com/YOUR_HANDLE" target="_blank">@your_handle</a></h4>
-            </div>
-        </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
@@ -202,17 +212,25 @@
             });
         });
     </script>
-    <script>
-        // Get the WhatsApp button
-        var whatsappButton = document.querySelector('.whats-app');
+    <!-- Modal image popup -->
+    <div class="image-modal" id="imageModal">
+        <img src="" alt="Zoomed Image" id="modalImage">
+    </div>
 
-        // Show/Hide button based on scroll
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 100) { // Show button after scrolling 100px
-                whatsappButton.classList.add('show');
-            } else { // Hide button when near the top
-                whatsappButton.classList.remove('show');
-            }
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+
+        document.querySelectorAll(".product-slider img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.classList.add("active");
+                modalImage.src = img.src;
+            });
+        });
+
+        modal.addEventListener("click", () => {
+            modal.classList.remove("active");
+            modalImage.src = "";
         });
     </script>
     <script>
@@ -221,6 +239,7 @@
 
             // Perform form validation
             var name = document.getElementById('name').value.trim();
+            var product = 'wedding-card01';
             var email = document.getElementById('email').value.trim();
             var mobile = document.getElementById('mobile').value.trim();
             var message = document.getElementById('fmmessage').value.trim();
@@ -246,8 +265,9 @@
             var url = `https://api.whatsapp.com/send?phone=9819413273&text=${encodeURIComponent(
                 `👋 Hello Rangsaj Arts,
 
-I'm reaching out through your Contact page and would love to connect!
+I'd love to inquire about one of your creations!
 
+🪄 Product: ${product}
 👤 Name: ${name}
 📧 Email: ${email}
 📱 Mobile: ${mobile}
@@ -255,9 +275,8 @@ I'm reaching out through your Contact page and would love to connect!
 💬 Message:
 ${message}
 
-Excited to hear from you soon! 💖`
+Looking forward to hearing from you! 💖`
             )}`;
-
             // Open the WhatsApp URL in a new tab
             window.open(url, '_blank');
         });
