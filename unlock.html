@@ -23,7 +23,7 @@
             color: #b84e75;
         }
 
-        .riddle-box {
+        .quiz-box {
             background: #fff;
             padding: 2rem;
             border-radius: 12px;
@@ -32,7 +32,7 @@
             margin-top: 2rem;
         }
 
-            .riddle-box input {
+            .quiz-box input {
                 width: 100%;
                 padding: 0.8rem;
                 border-radius: 8px;
@@ -57,8 +57,11 @@
                 background-color: #b84e75;
             }
 
-        .hidden-message {
+        .hidden {
             display: none;
+        }
+
+        .final-message {
             margin-top: 2rem;
             animation: fadeIn 1s ease forwards;
         }
@@ -86,7 +89,7 @@
             }
 
             50% {
-                transform: scale(1.2);
+                transform: scale(1.3);
             }
 
             100% {
@@ -98,31 +101,49 @@
 <body>
 
     <h1>🎁 A Birthday Puzzle for You, Yamini</h1>
-    <p>Guess the word that describes what this gift is made with...</p>
+    <p>Answer each riddle to unlock your final surprise...</p>
 
-    <div class="riddle-box">
-        <label for="answer">
-            <strong>Hint:</strong> It's in every card, every brushstroke, every memory we create together. 💖<br /><br />
-            What’s the one word that connects handmade art, stories, and this gift to you?
-        </label>        <input type="text" id="answer" placeholder="Your answer here..." />
-        <button class="btn" onclick="checkAnswer()">Unlock</button>
+    <div class="quiz-box" id="step1">
+        <label><strong>Step 1:</strong> It's the shortest word, yet starts the biggest feelings. Begins every sentence from the heart. 💖</label>
+
+        <input type="text" id="answer1" placeholder="Type here..." />
+        <button class="btn" onclick="checkStep(1)">Next</button>
     </div>
 
-    <div class="hidden-message" id="successMessage">
-        <div class="confetti">🎉✨</div>
-        <h2>Welcome to Your World, Yamini!</h2>
-        <p>This website is now yours. A place for your art, your soul, your story.</p>
-        <a href="index.html" class="btn">Rangsaj Arts</a>
+    <div class="quiz-box hidden" id="step2">
+        <label><strong>Step 2:</strong> The word you often hear when it begins with “I” 💬 </label>
+        <input type="text" id="answer2" placeholder="Type here..." />
+        <button class="btn" onclick="checkStep(2)">Next</button>
+    </div>
+
+    <div class="quiz-box hidden" id="step3">
+        <label><strong>Step 3:</strong> The word that completes “I love ___” ❤️</label>
+        <input type="text" id="answer3" placeholder="Type here..." />
+        <button class="btn" onclick="checkStep(3)">Unlock Surprise</button>
+    </div>
+
+    <div class="hidden final-message" id="finalMessage">
+        <div class="confetti">🎉💖🎉</div>
+        <h2>I Love You, Yami 💍</h2>
+        <p>This isn’t just a website. It’s a tiny world created for you, with every click, color, and corner whispering how much you mean to me.</p>
+        <a href="index.html" class="btn">Enter Rangsaj Arts</a>
     </div>
 
     <script>
-        function checkAnswer() {
-            const input = document.getElementById('answer').value.trim().toLowerCase();
-            const correctAnswers = ['love', 'pyar', 'prem']; // you can add more variations
-            if (correctAnswers.includes(input)) {
-                document.getElementById('successMessage').style.display = 'block';
+        const answers = ['i', 'love', 'you'];
+
+        function checkStep(step) {
+            const input = document.getElementById(`answer${step}`).value.trim().toLowerCase();
+
+            if (input === answers[step - 1]) {
+                document.getElementById(`step${step}`).classList.add('hidden');
+                if (step < 3) {
+                    document.getElementById(`step${step + 1}`).classList.remove('hidden');
+                } else {
+                    document.getElementById('finalMessage').classList.remove('hidden');
+                }
             } else {
-                alert("Hmm... that's not quite it. Try again 💡");
+                alert("Hmm... not quite. Try again? 💡");
             }
         }
     </script>
