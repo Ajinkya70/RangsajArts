@@ -7,100 +7,83 @@
     <style>
         body {
             margin: 0;
-            background: #fff7f9;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec);
             font-family: 'Poppins', sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            overflow: hidden;
+            padding: 20px;
         }
 
         .container {
-            width: 80%;
-            max-width: 650px;
+            width: 100%;
+            max-width: 600px;
             background: #ffffff;
-            padding: 60px 40px;
+            padding: 50px 35px;
             text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+            border: 3px solid #f9c2d8;
             position: relative;
-            border: 6px solid transparent;
-            background-clip: padding-box;
-            z-index: 2;
         }
 
         h1 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: #b84e75;
             margin-bottom: 1rem;
         }
 
         p {
             font-size: 1.1rem;
-            color: #5a4d52;
+            color: #5f4c52;
             line-height: 1.7;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         h2 {
             margin-top: 2rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #9f5f80;
         }
 
         .qr-placeholder {
-            margin-top: 40px;
+            margin-top: 30px;
             border: 2px dashed #d36c9d;
-            padding: 60px;
-            border-radius: 12px;
+            padding: 60px 20px;
+            border-radius: 14px;
             font-size: 1rem;
             color: #999;
+            background-color: #fff6fa;
+            transition: 0.3s ease-in-out;
         }
+
+            .qr-placeholder:hover {
+                background-color: #ffeaf1;
+                color: #b84e75;
+            }
 
         .small {
             font-size: 0.9rem;
             color: #888;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
-        .floral {
-            position: absolute;
-            width: 150px;
-            opacity: 0.3;
-            z-index: 1;
-        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 35px 25px;
+            }
 
-        .top-left-flower {
-            top: 0;
-            left: 0;
-            transform: rotate(-10deg);
-        }
+            h1 {
+                font-size: 2rem;
+            }
 
-        .top-right-flower {
-            top: 0;
-            right: 0;
-            transform: rotate(10deg);
-        }
-
-        .bottom-left-flower {
-            bottom: 0;
-            left: 0;
-            transform: rotate(5deg);
-        }
-
-        .bottom-right-flower {
-            bottom: 0;
-            right: 0;
-            transform: rotate(-5deg);
+            .qr-placeholder {
+                padding: 40px 15px;
+            }
         }
 
         @media print {
-            .floral {
-                display: none;
-            }
-
             .qr-placeholder {
                 border-style: solid;
                 color: #333;
@@ -109,12 +92,6 @@
     </style>
 </head>
 <body>
-    <!-- Decorative Florals -->
-    <img src="https://i.imgur.com/1v2bX9b.png" class="floral top-left-flower" />
-    <img src="https://i.imgur.com/1v2bX9b.png" class="floral top-right-flower" />
-    <img src="https://i.imgur.com/1v2bX9b.png" class="floral bottom-left-flower" />
-    <img src="https://i.imgur.com/1v2bX9b.png" class="floral bottom-right-flower" />
-
     <div class="container">
         <h1>A Gift for Yamini</h1>
         <p>But this isn't just any gift...</p>
@@ -124,7 +101,7 @@
         <h2>Scan to Begin</h2>
 
         <div class="qr-placeholder">
-            Paste QR Code Here
+       <img src="assets/UnlockGift.png" height="200px" width="200px" />
         </div>
 
         <p class="small">Scan this with your phone camera</p>
