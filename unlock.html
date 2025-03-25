@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎁 Unlock Your Surprise</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            background: #fff7f9;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #b84e75;
+        }
+
+        .riddle-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-width: 400px;
+            margin-top: 2rem;
+        }
+
+            .riddle-box input {
+                width: 100%;
+                padding: 0.8rem;
+                border-radius: 8px;
+                border: 2px solid #ffeaf4;
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+
+        .btn {
+            margin-top: 1rem;
+            background-color: #d36c9d;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #b84e75;
+            }
+
+        .hidden-message {
+            display: none;
+            margin-top: 2rem;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confetti {
+            font-size: 2rem;
+            animation: pop 0.8s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎁 A Birthday Puzzle for You, Yamini</h1>
+    <p>Guess the word that describes what this gift is made with...</p>
+
+    <div class="riddle-box">
+        <label for="answer">
+            <strong>Hint:</strong> It's in every card, every brushstroke, every memory we create together. 💖<br /><br />
+            What’s the one word that connects handmade art, stories, and this gift to you?
+        </label>        <input type="text" id="answer" placeholder="Your answer here..." />
+        <button class="btn" onclick="checkAnswer()">Unlock</button>
+    </div>
+
+    <div class="hidden-message" id="successMessage">
+        <div class="confetti">🎉✨</div>
+        <h2>Welcome to Your World, Yamini!</h2>
+        <p>This website is now yours. A place for your art, your soul, your story.</p>
+        <a href="index.html" class="btn">Rangsaj Arts</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const input = document.getElementById('answer').value.trim().toLowerCase();
+            const correctAnswers = ['love', 'pyar', 'prem']; // you can add more variations
+            if (correctAnswers.includes(input)) {
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                alert("Hmm... that's not quite it. Try again 💡");
+            }
+        }
+    </script>
+
+</body>
+</html>

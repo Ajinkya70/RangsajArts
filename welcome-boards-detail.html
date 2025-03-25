@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rangsaj Arts | Wedding Cards</title>
+    <title>Rangsaj Arts | In Detail</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
@@ -42,59 +42,75 @@
             </ul>
         </nav>
     </header>
-
-    <section class="designs-hero">
-        <h1>Wedding Card Designs</h1>
-        <p>Each design is crafted with love, detail, and your story in mind 💌</p>
+    <section class="product-hero">
+        <h1>Welcome Boards</h1>
     </section>
 
-    <section class="design-gallery">
-        <!-- Repeat for each design -->
-        <a href="wedding-card01-detail.html">
-            <div class="design-card" data-animate>
-                <img src="assets/Services/Wedding-invitation-mockup01.jpg" alt="Wedding Card Design 1" />
-                <div class="design-info">
-                    <h4>Wedding Card 01</h4>
-                    <p>Elegant pastel florals with gold foil elements.</p>
-                </div>
+    <!-- Image Slider -->
+    <section class="product-slider" data-animate>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img src="assets/Services/namingceremony.jpg" alt="Welcome Board 1">
             </div>
-        </a>
-        <a href="wedding-card02-detail.html">
-            <div class="design-card" data-animate>
-                <img src="assets/Services/Wedding-invitation-mockup02.jpg" alt="Wedding Card Design 2" />
-                <div class="design-info">
-                    <h4>Wedding Card 02</h4>
-                    <p>Deep red theme with traditional motifs.</p>
-                </div>
+        </div>
+    </section>
+
+    <!-- Reel Embed -->
+    <section class="product-reel" data-animate>
+        <div class="reel-wrapper">
+            <div class="reel-embed">
+                <blockquote class="instagram-media"
+                            data-instgrm-permalink="https://www.instagram.com/reel/Cpz53BlJANa/"
+                            data-instgrm-version="14"
+                            style="background:#FFF; border:0; border-radius:12px;
+                margin: 0 auto; max-width:320px; min-height: 640px; overflow:hidden;">
+                </blockquote>
             </div>
-        </a>
-        <a href="wedding-card03-detail.html">
-            <div class="design-card" data-animate>
-                <img src="assets/Services/Wedding-invitation-mockup03.jpg" alt="Wedding Card Design 2" />
-                <div class="design-info">
-                    <h4>Wedding Card 03</h4>
-                    <p>Deep red theme with traditional motifs.</p>
-                </div>
+            <div class="reel-text">
+                <h3>Watch it in Action ✨</h3>
+                <p>This reel showcases the making of our Welcome Boards — from elegant designs to personalized details, capturing the warmth that makes every celebration truly unforgettable. 💌</p>
             </div>
-        </a>
-        <a href="wedding-card04-detail.html">
-            <div class="design-card" data-animate>
-                <img src="assets/Services/Wedding-invitation-mockup04.jpg" alt="Wedding Card Design 2" />
-                <div class="design-info">
-                    <h4>Wedding Card 04</h4>
-                    <p>Deep red theme with traditional motifs.</p>
-                </div>
+        </div>
+        <script async src="//www.instagram.com/embed.js"></script>
+    </section>
+
+
+    <!-- Details -->
+    <section class="product-details" data-animate>
+        <h2>Details & Customization</h2>
+        <ul>
+            <li>Premium textured paper with pastel floral motifs</li>
+            <li>Includes matching envelope with seal</li>
+            <li>Size: 6 x 9 inches | Handmade ink calligraphy optional</li>
+            <li>Minimum Order: 50 cards</li>
+        </ul>
+        <p class="note">Looking for name personalization or theme changes? I’ve got you 💖</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="product-contact" data-animate>
+        <h3>Interested in this design?</h3>
+        <p>Drop your details and I’ll get back to you soon!</p>
+
+        <form id="contactForm">
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
             </div>
-        </a>
-        <a href="wedding-card05-detail.html">
-            <div class="design-card" data-animate>
-                <img src="assets/Services/Wedding-invitation-mockup05.jpg" alt="Wedding Card Design 2" />
-                <div class="design-info">
-                    <h4>Wedding Card 05</h4>
-                    <p>Deep red theme with traditional motifs.</p>
-                </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
             </div>
-        </a>
+            <div class="form-field">
+                <label for="tel">Mobile:</label>
+                <input type="tel" id="mobile" required>
+            </div>
+            <div class="form-field">
+                <label for="fmmessage">Message:</label>
+                <textarea id="fmmessage" required>I'm interested in above design. Please share more details.</textarea>
+            </div>
+            <button type="submit" class="btn">Send Inquiry on <i class="fab fa-whatsapp fa-1x"></i></button>
+        </form>
     </section>
     <footer class="footer">
         <div class="footer-content">
@@ -192,6 +208,75 @@
                 top: 0,
                 behavior: "smooth"
             });
+        });
+    </script>
+    <!-- Modal image popup -->
+    <div class="image-modal" id="imageModal">
+        <img src="" alt="Zoomed Image" id="modalImage">
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+
+        document.querySelectorAll(".product-slider img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.classList.add("active");
+                modalImage.src = img.src;
+            });
+        });
+
+        modal.addEventListener("click", () => {
+            modal.classList.remove("active");
+            modalImage.src = "";
+        });
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Perform form validation
+            var name = document.getElementById('name').value.trim();
+            var product = 'welcome-boards';
+            var email = document.getElementById('email').value.trim();
+            var mobile = document.getElementById('mobile').value.trim();
+            var message = document.getElementById('fmmessage').value.trim();
+
+            if (!name || !email || !mobile || !message) {
+                alert('All fields are required.');
+                return;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            var mobilePattern = /^\d{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            // Construct the WhatsApp URL
+            var url = `https://api.whatsapp.com/send?phone=9819413273&text=${encodeURIComponent(
+                `👋 Hello Rangsaj Arts,
+
+I'd love to inquire about one of your creations!
+
+🪄 Product: ${product}
+👤 Name: ${name}
+📧 Email: ${email}
+📱 Mobile: ${mobile}
+
+💬 Message:
+${message}
+
+Looking forward to hearing from you! 💖`
+            )}`;
+            // Open the WhatsApp URL in a new tab
+            window.open(url, '_blank');
         });
     </script>
 </body>

@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Artist | Art by Hand</title>
+    <title>Rangsaj Arts | Rukhwat Decor</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a2c5b1f1d3.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
 </head>
 <body>
     <div id="loader">
@@ -43,47 +36,38 @@
         <nav class="main-nav" id="mainNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="artist.html" class="active">The Artist</a></li>
-                <li><a href="category.html">Categories</a></li>
+                <li><a href="artist.html">The Artist</a></li>
+                <li><a href="category.html" class="active">Categories</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <!-- Hero Intro -->
-    <section class="artist-hero">
-        <div class="artist-hero-inner">
-            <h1>Hi, I'm Yamini Sawant</h1>
-            <p>The heart and hands behind <strong>Rangsaj Arts</strong></p>
-        </div>
+
+    <section class="designs-hero">
+        <h1>Rukhwat Decors</h1>
+        <p>Each design is crafted with love, detail, and your story in mind 💌</p>
     </section>
 
-    <section class="artist-about">
-        <div class="about-wrapper">
-            <div class="about-image">
-                <img src="assets/images/artist.jpg" alt="Cartoon Style Yamini Sawant" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    <section class="design-gallery">
+        <!-- Repeat for each design -->
+        <a href="rukhwat-sup-detail.html">
+            <div class="design-card" data-animate>
+                <img src="assets/Services/rukhwat-sup-mockup.jpg" alt="Rukhwat Sup" />
+                <div class="design-info">
+                    <h4>Rukhwat Sup</h4>
+                    <p>Traditional treasures thoughtfully curated for a bride’s new beginnings.</p>
+                </div>
             </div>
-            <div class="about-text">
-                <h2>Every piece starts with a story...</h2>
-                <p>
-                    I started Rangsaj Arts to give life to the beauty I see in emotions, traditions, and celebrations. From handcrafted wedding invites to personalized baby boards, I believe in capturing meaning — not just making pretty things.
-                </p>
-                <p>
-                    My work is rooted in love, inspired by culture, and touched by the personal moments you share with me. Rangsaj isn’t just a name — it’s a feeling, a splash of color in life’s biggest milestones.
-                </p>
+        </a>
+        <a href="rukhwat-saptapadi-detail.html">
+            <div class="design-card" data-animate>
+                <img src="assets/Services/ss1.jpg" alt="Rukhwat Saptapadi" />
+                <div class="design-info">
+                    <h4>Rukhwat Saptapadi</h4>
+                    <p>Seven steps, a lifetime of togetherness.</p>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="artist-quote">
-        <blockquote>
-            “My art is a reflection of emotions — carefully painted with heritage, color and soul.”
-            <span>– Yamini Sawant</span>
-        </blockquote>
-    </section>
-
-    <section class="cta">
-        <h3>Let's create something meaningful, together 🎨</h3>
-        <p>Whether you're planning a wedding, naming a baby, or just want to gift something special, I’m here to help bring your vision to life.</p>
-        <a href="contact.html" class="btn">Reach Out</a>
+        </a>
     </section>
     <footer class="footer">
         <div class="footer-content">
@@ -96,13 +80,65 @@
         </div>
     </footer>
     <button id="scrollToTopBtn" title="Back to Top">🖌️</button>
+
     <script>
-        // Hamburger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
         const hamburger = document.getElementById('hamburger');
         const mainNav = document.getElementById('mainNav');
+
         hamburger.addEventListener('click', () => {
             mainNav.classList.toggle('active');
         });
+    </script>
+    <script>
+        const container = document.querySelector('.category-scroll');
+        const cardWidth = 200; // approx width including margin
+        const maxScrollLeft = () => container.scrollWidth - container.clientWidth;
+
+        function scrollCategories(direction) {
+            const currentScroll = container.scrollLeft;
+            const scrollAmount = cardWidth * 2;
+
+            if (direction === 'right') {
+                if (currentScroll + scrollAmount >= maxScrollLeft() - 10) {
+                    // If at the end, scroll back to start
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            } else {
+                if (currentScroll <= 0) {
+                    // If at the start, scroll to the end
+                    container.scrollTo({ left: maxScrollLeft(), behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+    <script>
+        function scrollInstagram(direction) {
+            const container = document.getElementById('instaScroll');
+            const scrollAmount = 350;
+
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
     </script>
     <script>
         window.addEventListener("load", function () {
