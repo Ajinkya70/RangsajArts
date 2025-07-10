@@ -50,6 +50,39 @@
             </ul>
         </nav>
     </header>
+    <section class="main-slider">
+  <div class="slider">
+   <div class="slider-wrapper">
+  <div class="slide">
+    <a href="wedding-cards.html">
+      <img src="assets/images/Banners/Banner1.jpg" alt="Slide 1" />
+    </a>
+  </div>
+  <div class="slide">
+    <a href="birthday-gifts.html">
+      <img src="assets/images/Banners/Banner2.jpg" alt="Slide 2" />
+    </a>
+  </div>
+  <div class="slide">
+    <a href="baby-showers.html">
+      <img src="assets/images/Banners/Banner3.jpg" alt="Slide 3" />
+    </a>
+  </div>
+  <div class="slide">
+    <a href="t-shirts.html">
+      <img src="assets/images/Banners/Banner4.jpg" alt="Slide 4" />
+    </a>
+  </div>
+</div>
+
+  </div>
+  <div class="slider-nav">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+</section>
     <section class="hero">
         <div class="hero-content">
             <h2>Crafted with Love & Creativity</h2>
@@ -89,6 +122,14 @@
         <div class="category-scroll-wrapper">
             <button class="scroll-btn left" onclick="scrollCategories('left')">&#8249;</button>
             <div class="category-scroll">
+             <a href="wedding-cards.html" class="cat-card">
+                    <img src="assets/images/Categories/WCC.jpg" alt="Wedding Cards" />
+                    <p>Wedding Cards</p>
+                </a>    
+                  <a href="unique-frames.html" class="cat-card">
+                    <img src="assets/images/Categories/NBC.jpg" alt="Unique Frames" />
+                    <p>Unique Frames</p>
+                </a>
               <a href="rukhwat-decor.html" class="cat-card">
                     <img src="assets/images/Categories/WRC.jpg" alt="Rukhwat Decor" />
                     <p>Rukhwat</p>
@@ -97,6 +138,14 @@
                     <img src="assets/images/Categories/eh1.jpg" alt="Embroidery Hoop" />
                     <p>Embroidery Hoop</p>
                 </a>
+                 <a href="wedding-gifts.html" class="cat-card">
+                    <img src="assets/images/Categories/WGC.jpg" alt="Wedding Gifts" />
+                    <p>Wedding Gifts</p>
+                </a>
+                    <a href="birthday-gifts.html" class="cat-card">
+                    <img src="assets/images/Categories/BGC.jpg" alt="Birthday Gifts" />
+                    <p>Birthday Gifts</p>
+                </a>
                  <a href="baby-showers.html" class="cat-card">
                     <img src="assets/images/Categories/BSC.jpg" alt="Baby Showers" />
                     <p>Baby Showers</p>
@@ -104,23 +153,7 @@
                 <a href="t-shirts.html" class="cat-card">
                     <img src="assets/images/Categories/tshirts.jpg" alt="T-Shirts" />
                     <p>T-Shirts</p>
-                </a>    
-                <a href="wedding-cards.html" class="cat-card">
-                    <img src="assets/images/Categories/WCC.jpg" alt="Wedding Cards" />
-                    <p>Wedding Cards</p>
-                </a>                               
-                <a href="wedding-gifts.html" class="cat-card">
-                    <img src="assets/images/Categories/WGC.jpg" alt="Wedding Gifts" />
-                    <p>Wedding Gifts</p>
-                </a>
-                <a href="unique-frames.html" class="cat-card">
-                    <img src="assets/images/Categories/NBC.jpg" alt="Unique Frames" />
-                    <p>Unique Frames</p>
-                </a>
-                <a href="birthday-gifts.html" class="cat-card">
-                    <img src="assets/images/Categories/BGC.jpg" alt="Birthday Gifts" />
-                    <p>Birthday Gifts</p>
-                </a>
+                </a>   
              <!--   <a href="naming-ceremony.html" class="cat-card">
                     <img src="assets/images/Categories/NCC.jpg" alt="Naming Ceremony" />
                     <p>Naming Ceremony</p>
@@ -338,6 +371,38 @@
                 behavior: "smooth"
             });
         });
+    </script>
+    <script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let currentSlide = 0;
+  let slideInterval;
+
+  function goToSlide(n) {
+    clearInterval(slideInterval);
+    showSlide(n);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+
+  function showSlide(n) {
+    document.querySelector('.slider-wrapper').style.transform = `translateX(-${n * 100}%)`;
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    slides[n].classList.add('active');
+    dots[n].classList.add('active');
+    currentSlide = n;
+  }
+
+  function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  // ⏱ Ensure this waits for layout
+  window.addEventListener('load', () => {
+    showSlide(0);
+    slideInterval = setInterval(nextSlide, 5000);
+  });
     </script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 ﻿/* Reset & base */
 body {
-    background-color: #fff7f9;
+   background: linear-gradient(135deg, #f5dad9, #f2c5c4, #f3ede6, #fef7f1);
     background-image: url('images/pastel-texture.png'); /* Add a soft pastel or watercolor texture image */
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -202,6 +203,23 @@ body {
         font-size: 2.5rem;
         color: #b84e75;
     }
+    
+    /* Apply Poppins to the entire header and nav */
+.elegant-header,
+.elegant-header a,
+.main-nav ul li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500; /* Adjust 300, 500, or 700 as needed */
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333; /* or your preferred color */
+  font-size: 16px;
+  padding: 8px 15px;
+  display: inline-block;
+}
+
 
 .quote {
     text-align: center;
@@ -1078,11 +1096,6 @@ button.btn {
     overflow-x: auto;
 }
 
-.slider-wrapper {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
 .slider {
     display: flex;
     gap: 1rem;
@@ -1240,3 +1253,76 @@ button.btn {
         color: #fff;
         cursor: pointer;
     }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  color: #ff4f9d; /* or your preferred highlight */
+  font-weight: 700;
+}
+
+.main-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 400%; /* 4 slides */
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* NEW */
+  max-height: 100vh; /* Optional: no more than screen height */
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh; /* Prevents overly tall images */
+  object-fit: contain; /* Show full image inside the box */
+  display: block;
+}
+
+
+.slider-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
